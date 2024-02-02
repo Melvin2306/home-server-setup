@@ -37,8 +37,8 @@ else
     exit 1
 fi
 
-# Prompt user for Jellyfin WEBPASSWORD
-echo -n "Enter the password for Jellyfin Web interface and press [ENTER]: "
+# Prompt user for Pi-hole WEBPASSWORD
+echo -n "Enter the password for Pi-hole's Web interface and press [ENTER]: "
 read WEBPASSWORD
 
 # Check if WEBPASSWORD is empty
@@ -51,14 +51,14 @@ fi
 echo "Moving docker-compose files to directories..."
 if mv home-server-setup/pihole/docker-compose.yml pihole/ && \
    rm -r home-server-setup/pihole && \
+   sed -i "s/WEBPASSWORD: \"jellyfin\"/WEBPASSWORD: \"$WEBPASSWORD\"/g" jellyfin/docker-compose.yml && \
    mv home-server-setup/jellyfin/docker-compose.yml jellyfin/ && \
-   sed -i "s/WEBPASSWORD: \"pihole\"/WEBPASSWORD: \"$WEBPASSWORD\"/g" jellyfin/docker-compose.yml && \
    rm -r home-server-setup/jellyfin && \
    mv home-server-setup/change-detection/docker-compose.yml change-detection/ && \
    rm -r home-server-setup/change-detection; then
-    echo "Docker-compose files moved and Jellyfin password set."
+    echo "Docker-compose files moved and Pi-hole password set."
 else
-    echo "Error moving Docker-compose files or setting Jellyfin password."
+    echo "Error moving Docker-compose files or setting Pi-hole password."
     exit 1
 fi
 
