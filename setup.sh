@@ -50,8 +50,8 @@ fi
 # Move docker-compose files to directories
 echo "Moving docker-compose files to directories..."
 if mv home-server-setup/pihole/docker-compose.yml pihole/ && \
+sed -i "s/WEBPASSWORD: \"pihole\"/WEBPASSWORD: \"$WEBPASSWORD\"/g" pihole/docker-compose.yml &&
    rm -r home-server-setup/pihole && \
-   sed -i "s/WEBPASSWORD: \"jellyfin\"/WEBPASSWORD: \"$WEBPASSWORD\"/g" jellyfin/docker-compose.yml && \
    mv home-server-setup/jellyfin/docker-compose.yml jellyfin/ && \
    rm -r home-server-setup/jellyfin && \
    mv home-server-setup/change-detection/docker-compose.yml change-detection/ && \
