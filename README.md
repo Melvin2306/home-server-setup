@@ -4,7 +4,7 @@ This repository contains scripts designed to streamline the setup of a server en
 
 ## Scripts Overview
 
-- `setup_environment.sh`: This script updates the system's package lists, upgrades installed packages, installs Docker Compose, detects a connected USB device and mounts it to the `nas` directory in the user's home folder and creates specific directories in the user's home folder.
+- `setup.sh`: This script updates the system's package lists, upgrades installed packages, installs Docker Compose, detects a connected USB device and mounts it to the `nas` directory in the user's home folder and creates specific directories in the user's home folder.
 
 ## Getting Started
 
