@@ -18,13 +18,13 @@ This repository contains scripts designed to streamline the setup of a server en
 1. Clone the repository to your local machine:
 
    ```
-   git clone [home-server-setup](https://github.com/Melvin2306/home-server-setup)
+   git clone https://github.com/Melvin2306/home-server-setup
    ```
 
 2. Navigate to the cloned repository's directory:
 
    ```
-   cd <home-server-setup>
+   cd home-server-setup
    ```
 
 3. Give execution permissions to the scripts:
