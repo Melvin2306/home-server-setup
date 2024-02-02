@@ -18,7 +18,7 @@ echo "Docker Compose installed."
 # Create directories
 echo "Creating directories..."
 cd ..
-mkdir -p ~/nas ~/nextcloud ~/pihole ~/docker ~/cloudflare ~/jellyfin ~/change-detection
+mkdir -p nas nextcloud pihole docker cloudflare jellyfin change-detection
 echo "Directories created."
 
 # # Mount NAS
@@ -56,20 +56,20 @@ echo "Directories created."
 
 # Move docker-compose files to directories
 echo "Moving docker-compose files to directories..."
-mv ~/home-server-setup/pihole/docker-compose.yml ~/pihole/
-mv ~/home-server-setup/jellyfin/docker-compose.yml ~/jellyfin/
-mv ~/home-server-setup/change-detection/docker-compose.yml ~/change-detection/
+mv home-server-setup/pihole/docker-compose.yml pihole/
+mv home-server-setup/jellyfin/docker-compose.yml jellyfin/
+mv home-server-setup/change-detection/docker-compose.yml change-detection/
 echo "Docker-compose files moved."
 
 # Execute docker-compose files
 echo "Executing docker-compose files..."
-cd ~/pihole
+cd pihole
 sudo docker-compose up -d
 cd ..
-cd ~/jellyfin
+cd jellyfin
 sudo docker-compose up -d
 cd ..
-cd ~/change-detection
+cd change-detection
 sudo docker-compose up -d
 cd ..
 echo "Docker-compose files executed."
