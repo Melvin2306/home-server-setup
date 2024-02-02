@@ -1,0 +1,16 @@
+---
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:arm64v8-latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /home/melvin/jellyfin/library:/config
+      - /home/melvin/nas/tvseries:/home/melvin/nas/tvseries
+      - /home/melvin/nas/movies:/home/melvin/nas/movies
+    ports:
+      - 8096:8096
+    restart: unless-stopped
