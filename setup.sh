@@ -57,8 +57,11 @@ echo "Directories created."
 # Move docker-compose files to directories
 echo "Moving docker-compose files to directories..."
 mv home-server-setup/pihole/docker-compose.yml pihole/
+rm home-server-setup/pihole
 mv home-server-setup/jellyfin/docker-compose.yml jellyfin/
+rm home-server-setup/jellyfin
 mv home-server-setup/change-detection/docker-compose.yml change-detection/
+rm home-server-setup/change-detection
 echo "Docker-compose files moved."
 
 # Execute docker-compose files
@@ -80,5 +83,4 @@ sudo docker ps
 echo "Docker-compose files are running."
 
 # Reboot system
-echo "Setup Script execution completed successfully. Reboorting system..."
-sudo reboot
+echo "Setup Script execution completed successfully!"
