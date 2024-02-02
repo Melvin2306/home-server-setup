@@ -44,7 +44,7 @@ This repository contains scripts designed to streamline the setup of a server en
 1. **Setup Environment**: Run the `setup_environment.sh` script to update the system, install Docker Compose, and create the necessary directories.
 
    ```
-   sudo ./setup_environment.sh
+   sudo ./setup.sh
    ```
 
    This script requires sudo access to perform updates and installations. Before running the script, ensure a USB device is connected to the system. 
