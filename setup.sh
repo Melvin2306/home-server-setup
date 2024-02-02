@@ -55,9 +55,9 @@ echo "Directories created."
 
 # Move docker-compose files to directories
 echo "Moving docker-compose files to directories..."
-mv ~/pihole/docker-compose.yml ~/pihole/docker-compose.yml
-mv ~/jellyfin/docker-compose.yml ~/jellyfin/docker-compose.yml
-mv ~/change-detection/docker-compose.yml ~/change-detection/docker-compose.yml
+mv ~/pihole/docker-compose.yml ~/pihole/
+mv ~/jellyfin/docker-compose.yml ~/jellyfin/
+mv ~/change-detection/docker-compose.yml ~/change-detection/
 echo "Docker-compose files moved."
 
 # Execute docker-compose files
