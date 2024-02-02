@@ -50,7 +50,7 @@ fi
 # Move docker-compose files to directories
 echo "Moving docker-compose files to directories..."
 if mv home-server-setup/pihole/docker-compose.yml pihole/ && \
-sed -i "s/WEBPASSWORD: \"pihole\"/WEBPASSWORD: \"$WEBPASSWORD\"/g" pihole/docker-compose.yml &&
+   sed -i "s/WEBPASSWORD: \"pihole\"/WEBPASSWORD: \"$WEBPASSWORD\"/g" pihole/docker-compose.yml && \
    rm -r home-server-setup/pihole && \
    mv home-server-setup/jellyfin/docker-compose.yml jellyfin/ && \
    rm -r home-server-setup/jellyfin && \
@@ -64,10 +64,14 @@ fi
 
 # Execute docker-compose files
 echo "Executing docker-compose files..."
-cd pihole && sudo docker-compose up -d && cd ..
-cd jellyfin && sudo docker-compose up -d && cd ..
-cd change-detection && sudo docker-compose up -d && cd ..
-echo "Docker-compose files executed."
+if cd pihole && sudo docker-compose up -d && cd .. && /
+   cd jellyfin && sudo docker-compose up -d && cd .. && /
+   cd change-detection && sudo docker-compose up -d && cd ..; then
+    echo "Docker-compose files executed."
+else
+    echo "Error executing Docker-compose files."
+    exit 1
+fi
 
 # Check if docker-compose files are running
 echo "Checking if docker-compose files are running..."
