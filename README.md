@@ -15,22 +15,28 @@ This repository contains scripts designed to streamline the setup of a server en
 
 ### Installation
 
-1. Clone the repository to your local machine:
+1. Install git:
+
+   ```
+   sudo apt install git -y
+   ```
+
+2. Clone the repository to your local machine:
 
    ```
    git clone https://github.com/Melvin2306/home-server-setup
    ```
 
-2. Navigate to the cloned repository's directory:
+3. Navigate to the cloned repository's directory:
 
    ```
    cd home-server-setup
    ```
 
-3. Give execution permissions to the scripts:
+4. Give execution permissions to the scripts:
 
    ```
-   chmod +x setup_environment.sh
+   chmod +x setup.sh
    ```
 
 ### Usage
