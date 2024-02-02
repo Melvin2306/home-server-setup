@@ -52,3 +52,19 @@ This repository contains scripts designed to streamline the setup of a server en
 ## Contributing
 
 Contributions to improve the scripts or add new features are welcome. Please follow the standard GitHub pull request process to submit your contributions.
+
+## Services
+
+The following services are installed through this script:
+
+- Changedetection.io
+
+Changedetection.io is a web application that can be used to monitor websites and detect changes in their source code. For further information visit the official website [changedetection.io](https://changedetection.io/)
+
+- Pi-hole
+
+Pi-hole is DNS Service that you can use to filter malicious websites and ads from your traffic. Add custom domains or wordlists you can find online to improve and expand your lists of blocked domains. Find more information on the official website [pi-hole.net](https://pi-hole.net/)
+
+- Jellyfin
+
+Jellyfin is a web application that makes it possible to watch your own movies and tv-shows from every device in your network. It expands the streaming experience by adding metadata to the movies and shows. Find more information on the official website [jellyfin.org](https://jellyfin.org/)
