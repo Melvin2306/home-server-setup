@@ -20,38 +20,38 @@ echo "Creating directories..."
 mkdir -p ~/nas ~/nextcloud ~/pihole ~/docker ~/cloudflare ~/jellyfin ~/change-detection
 echo "Directories created."
 
-# Mount NAS
-echo "Mounting NAS..."
+# # Mount NAS
+# echo "Mounting NAS..."
 
-# Find the device name of the first USB device
-USB_DEVICE=$(lsblk -o NAME,MOUNTPOINT | grep -v "boot\|root" | awk '/\/media\//{print $1}' | head -n 1)
+# # Find the device name of the first USB device
+# USB_DEVICE=$(lsblk -o NAME,MOUNTPOINT | grep -v "boot\|root" | awk '/\/media\//{print $1}' | head -n 1)
 
-if [ -z "$USB_DEVICE" ]; then
-    echo "No USB device detected."
-    exit 1
-fi
+# if [ -z "$USB_DEVICE" ]; then
+#     echo "No USB device detected."
+#     exit 1
+# fi
 
-# The full path of the device
-USB_DEVICE_PATH="/dev/$USB_DEVICE"
+# # The full path of the device
+# USB_DEVICE_PATH="/dev/$USB_DEVICE"
 
-# Directory to mount the USB device
-MOUNT_DIR="$HOME/nas"
+# # Directory to mount the USB device
+# MOUNT_DIR="$HOME/nas"
 
-# Check if the mount directory exists
-if [ ! -d "$MOUNT_DIR" ]; then
-    echo "Mount directory $MOUNT_DIR does not exist, creating it..."
-    mkdir -p "$MOUNT_DIR"
-fi
+# # Check if the mount directory exists
+# if [ ! -d "$MOUNT_DIR" ]; then
+#     echo "Mount directory $MOUNT_DIR does not exist, creating it..."
+#     mkdir -p "$MOUNT_DIR"
+# fi
 
-# Mount the USB device
-echo "Mounting $USB_DEVICE_PATH to $MOUNT_DIR..."
-sudo mount $USB_DEVICE_PATH $MOUNT_DIR
+# # Mount the USB device
+# echo "Mounting $USB_DEVICE_PATH to $MOUNT_DIR..."
+# sudo mount $USB_DEVICE_PATH $MOUNT_DIR
 
-if [ $? -eq 0 ]; then
-    echo "Successfully mounted $USB_DEVICE_PATH to $MOUNT_DIR."
-else
-    echo "Failed to mount $USB_DEVICE_PATH."
-fi
+# if [ $? -eq 0 ]; then
+#     echo "Successfully mounted $USB_DEVICE_PATH to $MOUNT_DIR."
+# else
+#     echo "Failed to mount $USB_DEVICE_PATH."
+# fi
 
 # Move docker-compose files to directories
 echo "Moving docker-compose files to directories..."
